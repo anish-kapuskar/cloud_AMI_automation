@@ -1,28 +1,18 @@
 jobs:
-  build:
-    working_directory: ~/ami
-    docker:
-      - image: circleci/openjdk:8-jdk
-    steps:
-      - checkout
-      - run:mvn -Dtest=testmsgbuilder test
-
+   
   build_ami:
+    working_directory: ~/ami
     docker:
       - image: hashicorp/packer:1.1.1
     steps:
-      - run:./packer build \
-            -var 'aws_access_key=AKIA2GQ2L73TEKMU3W43' \
-            -var 'aws_secret_key=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' \
-            -var 'aws_region=us-east-1' \
-            ami.json
+      - run:
+         command: |
+          ./buildAmi.sh
 
 workflows:
   version: 2
   build_ami:
     jobs:
       - build_ami
-  build_deploy:
-    jobs:
-      - build
+
 
