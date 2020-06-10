@@ -20,5 +20,3 @@ workflows:
     jobs:
       - build_ami
 
-
-
