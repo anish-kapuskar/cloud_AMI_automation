@@ -3,7 +3,7 @@
     "aws_access_key": "",
     "aws_secret_key": "",
     "aws_region": "us-east-1",
-     "subnet_id": "subnet-3afcee04",
+     "subnet_id": "subnet-04c465b8bfe70ee31",
      "source_ami": "ami-068663a3c619dd892",
      "ssh_username": "ubuntu",
      "ami_users": "701208723174,569196275084"
@@ -40,6 +40,7 @@
    ],
    "inline": [
             "sudo apt clean",
+            "sudo sleep 30",
             "sudo apt update",
             "sudo apt install openjdk-11-jdk -y",
             "sudo apt install tomcat9 -y",
