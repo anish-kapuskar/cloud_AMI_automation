@@ -3,7 +3,7 @@
     "aws_access_key": "",
     "aws_secret_key": "",
     "aws_region": "us-east-1",
-     "subnet_id": "subnet-3afcee04",
+     "subnet_id": "subnet-0498074d8872e0166",
      "source_ami": "ami-068663a3c619dd892",
      "ssh_username": "ubuntu"
   },
@@ -36,13 +36,13 @@
        "FOO=foo"
    ],
    "inline": [
-            "sudo apt-get clean",
-            "sudo apt-get update",
-            "sudo apt-get install openjdk-11-jdk -y",
-            "sudo apt-get install tomcat9 -y",
-            "sudo apt-get install mysql-server -y",
-            "sudo apt-get install maven -y"
-           ] 
+            "sudo apt clean",
+            "sudo apt update",
+            "sudo apt install openjdk-11-jdk -y",
+            "sudo apt install tomcat9 -y",
+            "sudo apt install mysql-server -y",
+            "sudo apt install maven -y"
+           ]
    }
   ]
 }
