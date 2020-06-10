@@ -5,11 +5,13 @@
     "aws_region": "us-east-1",
      "subnet_id": "subnet-3afcee04",
      "source_ami": "ami-068663a3c619dd892",
-     "ssh_username": "ubuntu"
+     "ssh_username": "ubuntu",
+     "ami_users": "701208723174,569196275084"
   },
   "builders": [
     {
       "type": "amazon-ebs",
+      "ami_users": "{{user `ami_users`}}",
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key`}}",
       "region": "us-east-1",
@@ -36,13 +38,13 @@
        "FOO=foo"
    ],
    "inline": [
-            "sudo apt-get clean",
-            "sudo apt-get update",
-            "sudo apt-get install openjdk-11-jdk -y",
-            "sudo apt-get install tomcat9 -y",
-            "sudo apt-get install mysql-server -y",
-            "sudo apt-get install maven -y"
-           ] 
+            "sudo apt clean",
+            "sudo apt update",
+            "sudo apt install openjdk-11-jdk -y",
+            "sudo apt install tomcat9 -y",
+            "sudo apt install mysql-server -y",
+            "sudo apt install maven -y"
+           ]
    }
   ]
 }

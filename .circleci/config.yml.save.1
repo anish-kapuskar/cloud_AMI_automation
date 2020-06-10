@@ -1,0 +1,22 @@
+jobs:
+   
+  build_ami:
+    working_directory: ~/ami
+    docker:
+      - image: hashicorp/packer:1.1.1
+    steps:
+
+      - run:
+         command: |
+          pwd
+          ls -al
+          chmod +x ./buildAmi.sh
+          ./buildAmi.sh
+
+workflows:
+  version: 2
+  build_ami:
+    jobs:
+      - build_ami
+
+

@@ -1,18 +1,24 @@
 jobs:
-   
+
   build_ami:
     working_directory: ~/ami
     docker:
       - image: hashicorp/packer:1.1.1
     steps:
+      - checkout
       - run:
          command: |
-          ./buildAmi.sh
-
+          packer validate ami.json
+          packer build \
+            -var "aws_access_key=${aws_access_key}" \
+            -var "aws_secret_key=${aws_secret_key}" \
+            -var "aws_region=${aws_region}" \
+            ami.json
 workflows:
   version: 2
   build_ami:
     jobs:
       - build_ami
+
 
 
