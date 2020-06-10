@@ -5,11 +5,13 @@
     "aws_region": "us-east-1",
      "subnet_id": "subnet-0498074d8872e0166",
      "source_ami": "ami-068663a3c619dd892",
-     "ssh_username": "ubuntu"
+     "ssh_username": "ubuntu",
+     "ami_users": "701208723174,569196275084"
   },
   "builders": [
     {
       "type": "amazon-ebs",
+      "ami_users": "{{user `ami_users`}}",
       "access_key": "{{user `aws_access_key`}}",
       "secret_key": "{{user `aws_secret_key`}}",
       "region": "us-east-1",
